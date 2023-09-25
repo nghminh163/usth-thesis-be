@@ -3,7 +3,7 @@ const data = require('./students.json');
 app.listen(3000, () => console.log("Server is running"));
 
 app.get('/api/students', (req, res) => {
-    res.json(data.filter(v => ({
+    res.json(data.map(v => ({
         id: v.id,
         name: `${v.first_name} ${v.last_name}`,
     }))
